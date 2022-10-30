@@ -1,0 +1,12 @@
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@coorder-db.cnruvnbfwdg7.us-west-1.rds.amazonaws.com:1521:ORCL
+    username: ADMIN
+    password: 'Coorder2022!'
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    hibernate:
+      # update? ???? ??? ?????
+      ddl-auto: update
