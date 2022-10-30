@@ -18,7 +18,7 @@ public class BookRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Book book = new Book();
-        book.setName("Whiteship's JPA");
+        book.setName("Another Book name");
         book.setCreated(new Date());
 
         bookRepository.save(book);
