@@ -1,6 +1,8 @@
 package com.example.demoJPA.store;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,14 +13,16 @@ import java.sql.Blob;
 @Entity
 @Table(name = "T_STOR")
 @Data
+@Getter
+@Setter
 public class Store {
 
     @Id
     @Column(name = "STOR_CD", length = 12)
-    private String stor_cd;
+    private String storCd;
 
     @Column(name = "STOR_NM", length = 50)
-    private String stor_nm;
+    private String storNm;
 
     @Column(name = "ADDR", length = 100)
     private String addr;
@@ -27,7 +31,10 @@ public class Store {
     private String tel;
 
     @Column(name = "MAIN_PHOTO")
-    private String main_photo;
+    private byte[] mainPhoto;
+
+    @Column(name = "ETC")
+    private String etc;
 
 
 }
