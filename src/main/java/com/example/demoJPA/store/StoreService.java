@@ -14,8 +14,12 @@ public class StoreService {
 
     private final StoreRepository storeRepository;
 
-    public List<Store> getStoreService(String storeCd) {
-        return storeRepository.findAllByStorCd(storeCd);
+    public List<Store> findByStorCd(String storeCd) {
+        return storeRepository.findByStorCd(storeCd);
+    }
+
+    public List<Store> findAllStore() {
+        return storeRepository.findAll();
     }
 
 }

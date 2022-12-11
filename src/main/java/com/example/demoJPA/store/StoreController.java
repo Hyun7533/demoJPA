@@ -20,10 +20,15 @@ public class StoreController {
 
     private final StoreService storeService;
 
-    @PostMapping("/getStore")
-    public List<Store> getStore(@RequestBody Store store) {
+    @PostMapping("/findByStorCd")
+    public List<Store> findByStorCd(@RequestBody Store store) {
         log.debug(store.getStorCd());
-        return storeService.getStoreService(store.getStorCd());
+        return storeService.findByStorCd(store.getStorCd());
+    }
+
+    @PostMapping("/findAllStore")
+    public List<Store> findAllStore() {
+        return storeService.findAllStore();
     }
 
 

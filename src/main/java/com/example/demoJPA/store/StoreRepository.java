@@ -6,9 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface StoreRepository extends JpaRepository<Store, String> {
 
-    List<Store> findAllByStorCd(String storeCd);
+    List<Store> findByStorCd(String storeCd);
 
 }
