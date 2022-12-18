@@ -21,4 +21,16 @@ public class MemberService {
     public List<Member> searchTeam(Long id) {
         return memberRepository.searchTeam(id);
     }
+
+    public Long deleteMember(Long id) {
+        return memberRepository.deleteMember(id);
+    }
+
+    public Member searchMemberById(Long id) {
+        return memberRepository.searchMemberById(id);
+    }
+
+    public Long updateMember(Member member) {
+        return memberRepository.updateMember(member);
+    }
 }

@@ -19,7 +19,7 @@ public class Member {
     @Id @GeneratedValue
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     @JsonBackReference
     private Team team;

@@ -27,4 +27,22 @@ public class MemberRepository {
         List<Member> members = findTeam.getMembers();
         return members;
     }
+
+    public Long deleteMember(Long id) {
+        Member member = em.find(Member.class, id);
+        em.remove(member);
+        return member.getId();
+    }
+
+    public Member searchMemberById(Long id) {
+        return em.find(Member.class, id);
+    }
+
+    public Long updateMember(Member member) {
+        Member member1 = em.find(Member.class, member.getId());
+        member1.setName(member.getName());
+        member1.setSex(member.getSex());
+        em.persist(member1);
+        return member1.getId();
+    }
 }
