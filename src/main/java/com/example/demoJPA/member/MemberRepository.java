@@ -15,11 +15,13 @@ public class MemberRepository {
 
     public Long save(Member member) {
         Team team = em.find(Team.class, 1L);
+        Member member1 = Member.builder()
+                .name(member.getName())
+                .sex(member.getSex())
+                .team(team).build();
+        em.persist(member1);
 
-        member.setTeam(team);
-        em.persist(member);
-
-        return member.getId();
+        return member1.getId();
     }
 
     public List<Member> searchTeam(Long id) {
@@ -40,8 +42,8 @@ public class MemberRepository {
 
     public Long updateMember(Member member) {
         Member member1 = em.find(Member.class, member.getId());
-        member1.setName(member.getName());
-        member1.setSex(member.getSex());
+//        member1.setName(member.getName());
+//        member1.setSex(member.getSex());
         em.persist(member1);
         return member1.getId();
     }

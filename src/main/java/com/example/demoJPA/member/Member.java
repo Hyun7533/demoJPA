@@ -2,18 +2,13 @@ package com.example.demoJPA.member;
 
 import com.example.demoJPA.team.Team;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
-@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Member {
 
     @Id @GeneratedValue
@@ -28,4 +23,11 @@ public class Member {
 
     private String sex;
 
+    @Builder
+    public Member(Long id, Team team, String name, String sex) {
+        this.id = id;
+        this.team = team;
+        this.name = name;
+        this.sex = sex;
+    }
 }
