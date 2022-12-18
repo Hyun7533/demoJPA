@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Repository
 public class MemberRepository {
@@ -13,9 +14,17 @@ public class MemberRepository {
     private EntityManager em;
 
     public Long save(Member member) {
-        Team team = em.find(Team.class, 100L);
+        Team team = em.find(Team.class, 1L);
+
         member.setTeam(team);
         em.persist(member);
+
         return member.getId();
+    }
+
+    public List<Member> searchTeam(Long id) {
+        Team findTeam = em.find(Team.class, id);
+        List<Member> members = findTeam.getMembers();
+        return members;
     }
 }
