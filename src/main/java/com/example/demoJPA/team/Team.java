@@ -10,13 +10,13 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Table(name = "TEAM")
 public class Team {
 
     @Id @GeneratedValue
-    @Column(name = "TEAM_ID")
     private Long id;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany
     private List<Member> members;
 
     private String name;

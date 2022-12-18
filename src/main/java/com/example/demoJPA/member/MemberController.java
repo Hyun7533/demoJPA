@@ -12,7 +12,7 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/saveMember")
-    public Member saveMember(@RequestBody Member member) {
+    public Long saveMember(@RequestBody Member member) {
         return memberService.saveMember(member);
     }
 
